@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Yaro';
+  src: url('/fonts/YaroCut-Bold.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Yaro', sans-serif;
+}
