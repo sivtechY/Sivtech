@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { FaWhatsapp } from "react-icons/fa";
 export default function SivTechWebsite() {
  const [menuAbierto, setMenuAbierto] = useState(false);
   return (
@@ -253,35 +253,50 @@ style={{ fontFamily: 'Yaro' }}>
 <div className="fixed bottom-6 right-6 z-50">
 
   {menuAbierto && (
-    <div className="mb-3 bg-white rounded-2xl shadow-2xl overflow-hidden w-64">
+  <div className="absolute bottom-0 right-20 w-72 rounded-2xl
+                  bg-white/10 backdrop-blur-xl
+                  border border-white/20
+                  shadow-2xl overflow-hidden">
 
       <a
-        href="https://wa.me/59175174318"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block px-5 py-4 hover:bg-gray-100 text-gray-800"
-      >
-        📞 Ventas
-      </a>
+  href="https://wa.me/59175174318"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 px-5 py-4 hover:bg-white/10 transition"
+>
+  <span className="text-2xl">🟢</span>
+  <div>
+    <p className="text-white font-semibold">Ventas</p>
+    <p className="text-gray-300 text-sm">+591 75174318</p>
+  </div>
+</a>
 
-      <a
-        href="https://wa.me/59175166249"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block px-5 py-4 hover:bg-gray-100 border-t text-gray-800"
-      >
-        🛠️ Soporte Técnico
-      </a>
+<div className="border-t border-white/10"></div>
+
+<a
+  href="https://wa.me/59175166249"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 px-5 py-4 hover:bg-white/10 transition"
+>
+  <span className="text-2xl">🟢</span>
+  <div>
+    <p className="text-white font-semibold">Soporte Técnico</p>
+    <p className="text-gray-300 text-sm">+591 75166249</p>
+  </div>
+</a>
 
     </div>
   )}
 
   <button
-    onClick={() => setMenuAbierto(!menuAbierto)}
-    className="w-16 h-16 rounded-full bg-green-500 hover:scale-110 transition shadow-2xl flex items-center justify-center text-3xl"
-  >
-    💬
-  </button>
+  onClick={() => setMenuAbierto(!menuAbierto)}
+  className="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600
+             hover:scale-110 transition shadow-2xl
+             flex items-center justify-center"
+>
+  <FaWhatsapp size={34} color="white" />
+</button>
 
 </div>
     </div>
