@@ -266,7 +266,7 @@ style={{ fontFamily: 'Yaro' }}>
 >
   <span className="text-2xl">🟢</span>
   <div>
-    <p className="text-white font-semibold">Ventas</p>
+    <p className="text-white font-semibold">Ing. Cristian Vargas</p>
     <p className="text-gray-300 text-sm">+591 75174318</p>
   </div>
 </a>
@@ -281,8 +281,23 @@ style={{ fontFamily: 'Yaro' }}>
 >
   <span className="text-2xl">🟢</span>
   <div>
-    <p className="text-white font-semibold">Soporte Técnico</p>
+    <p className="text-white font-semibold">Ing. Jose Jerez</p>
     <p className="text-gray-300 text-sm">+591 75166249</p>
+  </div>
+</a>
+
+<div className="border-t border-white/10"></div>
+
+<a
+  href="https://wa.me/59176801628"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 px-5 py-4 hover:bg-white/10 transition"
+>
+  <span className="text-2xl">🟢</span>
+  <div>
+    <p className="text-white font-semibold">Ing. Julio C. Rojas</p>
+    <p className="text-gray-300 text-sm">+591 76801628</p>
   </div>
 </a>
 
