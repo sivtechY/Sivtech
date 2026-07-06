@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 export default function SivTechWebsite() {
+ const [menuAbierto, setMenuAbierto] = useState(false);
   return (
     <div className="min-h-screen bg-[#050816] text-white overflow-hidden relative"
 style={{ fontFamily: 'Yaro' }}>
@@ -248,24 +251,38 @@ style={{ fontFamily: 'Yaro' }}>
       </footer>
       {/* Botón flotante WhatsApp */}
 <div className="fixed bottom-6 right-6 z-50">
-  <a
-    href="https://wa.me/+59175174318"
-    target="_blank"
-    rel="noopener noreferrer"
+
+  {menuAbierto && (
+    <div className="mb-3 bg-white rounded-2xl shadow-2xl overflow-hidden w-64">
+
+      <a
+        href="https://wa.me/59175174318"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block px-5 py-4 hover:bg-gray-100 text-gray-800"
+      >
+        📞 Ventas
+      </a>
+
+      <a
+        href="https://wa.me/59175166249"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block px-5 py-4 hover:bg-gray-100 border-t text-gray-800"
+      >
+        🛠️ Soporte Técnico
+      </a>
+
+    </div>
+  )}
+
+  <button
+    onClick={() => setMenuAbierto(!menuAbierto)}
     className="w-16 h-16 rounded-full bg-green-500 hover:scale-110 transition shadow-2xl flex items-center justify-center text-3xl"
   >
     💬
-  </a>
-</div>
-<div className="fixed bottom-25 right-6 z-50">
-  <a
-    href="https://wa.me/+59175166249"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-16 h-16 rounded-full bg-blue-500 hover:scale-110 transition shadow-2xl flex items-center justify-center text-3xl"
-  >
-    💬
-  </a>
+  </button>
+
 </div>
     </div>
   )
