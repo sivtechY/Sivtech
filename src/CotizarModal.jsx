@@ -47,7 +47,7 @@ export default function CotizarModal({ abierto, cerrar }) {
       onClick={cerrar}
     >
       <div
-        className="w-full max-w-5xl rounded-3xl border border-cyan-500/20 bg-[#071221]/95 shadow-2xl overflow-hidden"
+        className="w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3x border border-cyan-500/20 bg-[#071221]/95 shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Encabezado */}
@@ -58,7 +58,7 @@ export default function CotizarModal({ abierto, cerrar }) {
               SIVTECH
             </p>
 
-            <h2 className="text-3xl font-bold mt-2">
+            <h2 className="text-2xl md:text-3xl font-bold mt-2">
               Solicita una Cotización
             </h2>
 
@@ -78,20 +78,20 @@ export default function CotizarModal({ abierto, cerrar }) {
 
         {/* Servicios */}
 
-        <div className="p-8">
+        <div className="p-4 md:p-8">
 
-          <h3 className="text-center text-xl font-semibold mb-8">
+          <h3 className="text-center text-lg md:text-xl font-semibold mb-8">
             Selecciona el servicio de tu interés
           </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 
             {servicios.map((item) => (
 
               <button
                 key={item.nombre}
                 onClick={() => setServicio(item.nombre)}
-                className={`rounded-2xl p-6 border transition-all duration-300 text-left hover:scale-105
+                className={`rounded-2xl p-4 md:p-6 border transition-all duration-300 text-left hover:scale-105
                 ${
                   servicio === item.nombre
                     ? "border-cyan-400 bg-cyan-500/20"
@@ -103,7 +103,7 @@ export default function CotizarModal({ abierto, cerrar }) {
                   {item.icono}
                 </div>
 
-                <h4 className="text-xl font-bold">
+                <h4 className="text-lg md:text-xl font-bold">
                   {item.nombre}
                 </h4>
 
