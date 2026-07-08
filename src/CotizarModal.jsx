@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   FaVideo,
   FaNetworkWired,
@@ -10,6 +11,11 @@ import {
 
 export default function CotizarModal({ abierto, cerrar }) {
   const [servicio, setServicio] = useState("");
+  const [nombre, setNombre] = useState("");
+const [telefono, setTelefono] = useState("");
+const [empresa, setEmpresa] = useState("");
+const [descripcion, setDescripcion] = useState("");
+const [contacto, setContacto] = useState("59175174318");
 
   if (!abierto) return null;
 
@@ -129,20 +135,148 @@ export default function CotizarModal({ abierto, cerrar }) {
 
           </div>
 
-          {servicio && (
-            <div className="mt-8 rounded-2xl border border-cyan-500/20 bg-black/20 p-6">
+        {servicio && (
+  <div className="mt-8 rounded-2xl border border-cyan-500/20 bg-black/20 p-6">
 
-              <h3 className="text-2xl font-bold text-cyan-400">
-                {servicio}
-              </h3>
+    <h3 className="text-2xl font-bold text-cyan-400 mb-6">
+      {servicio}
+    </h3>
 
-              <p className="text-gray-300 mt-2">
-                Excelente elección. Completa el formulario que aparecerá aquí
-                en el siguiente paso.
-              </p>
+    <div className="grid gap-4">
 
-            </div>
-          )}
+      <input
+        type="text"
+        placeholder="👤 Nombre completo *"
+        value={nombre}
+        onChange={(e) => setNombre(e.target.value)}
+        className="w-full rounded-xl bg-white/5 border border-white/10 p-4 outline-none focus:border-cyan-400"
+      />
+
+      <input
+        type="text"
+        placeholder="📱 WhatsApp *"
+        value={telefono}
+        onChange={(e) => setTelefono(e.target.value)}
+        className="w-full rounded-xl bg-white/5 border border-white/10 p-4 outline-none focus:border-cyan-400"
+      />
+
+      <input
+        type="text"
+        placeholder="🏢 Empresa (Opcional)"
+        value={empresa}
+        onChange={(e) => setEmpresa(e.target.value)}
+        className="w-full rounded-xl bg-white/5 border border-white/10 p-4 outline-none focus:border-cyan-400"
+      />
+
+      <textarea
+        rows="5"
+        placeholder="📝 Describe lo que necesitas *"
+        value={descripcion}
+        onChange={(e) => setDescripcion(e.target.value)}
+        className="w-full rounded-xl bg-white/5 border border-white/10 p-4 outline-none focus:border-cyan-400"
+      />
+
+      <div className="pt-2">
+        <h4 className="text-lg font-semibold text-cyan-400 mb-4">
+          ¿Con quién deseas comunicarte?
+        </h4>
+
+        <div className="grid md:grid-cols-3 gap-4">
+
+          <button
+            type="button"
+            onClick={() => setContacto("59175174318")}
+            className={`rounded-xl border p-4 transition ${
+              contacto === "59175174318"
+                ? "border-cyan-400 bg-cyan-500/20"
+                : "border-white/10 bg-white/5 hover:border-cyan-400"
+            }`}
+          >
+            <div className="text-4xl mb-2">👨‍💼</div>
+            <h5 className="font-bold">Ing. Cristian Vargas</h5>
+            <p className="text-sm text-gray-400">
+              Gerente Comercial
+            </p>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setContacto("59175166249")}
+            className={`rounded-xl border p-4 transition ${
+              contacto === "59175166249"
+                ? "border-cyan-400 bg-cyan-500/20"
+                : "border-white/10 bg-white/5 hover:border-cyan-400"
+            }`}
+          >
+            <div className="text-4xl mb-2">👨‍💻</div>
+            <h5 className="font-bold">Ing. José Jerez</h5>
+            <p className="text-sm text-gray-400">
+              Redes y Telecomunicaciones
+            </p>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setContacto("59176801628")}
+            className={`rounded-xl border p-4 transition ${
+              contacto === "59176801628"
+                ? "border-cyan-400 bg-cyan-500/20"
+                : "border-white/10 bg-white/5 hover:border-cyan-400"
+            }`}
+          >
+            <div className="text-4xl mb-2">👨‍🔧</div>
+            <h5 className="font-bold">Ing. Julio C. Rojas</h5>
+            <p className="text-sm text-gray-400">
+              Soporte Técnico
+            </p>
+          </button>
+
+        </div>
+      </div>
+
+      <button
+        type="button"
+        onClick={() => {
+
+          if (!nombre || !telefono || !descripcion) {
+            alert("Complete los campos obligatorios.");
+            return;
+          }
+
+          const mensaje = `Hola, SivTech.
+
+Solicito una cotización.
+
+Servicio:
+${servicio}
+
+Nombre:
+${nombre}
+
+WhatsApp:
+${telefono}
+
+${empresa ? `Empresa:
+${empresa}
+
+` : ""}Descripción:
+${descripcion}`;
+
+          window.open(
+            `https://wa.me/${contacto}?text=${encodeURIComponent(mensaje)}`,
+            "_blank"
+          );
+
+        }}
+        className="mt-6 w-full bg-green-500 hover:bg-green-600 transition rounded-xl py-4 text-lg font-bold"
+      >
+        📲 Enviar por WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+)}
 
         </div>
       </div>
