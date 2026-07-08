@@ -1,7 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import CotizarModal from "./CotizarModal";
 import { FaWhatsapp } from "react-icons/fa";
 export default function SivTechWebsite() {
+
  const [menuAbierto, setMenuAbierto] = useState(false);
+ const [mostrarCotizar, setMostrarCotizar] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#050816] text-white overflow-hidden relative"
 style={{ fontFamily: 'Yaro' }}>
@@ -39,9 +43,12 @@ style={{ fontFamily: 'Yaro' }}>
             </a>
           </nav>
 
-          <button className="bg-blue-600 hover:bg-blue-500 transition px-5 py-2 rounded-full shadow-lg shadow-blue-500/30 text-sm">
-            Cotizar
-          </button>
+          <button
+  onClick={() => setMostrarCotizar(true)}
+  className="bg-blue-600 hover:bg-cyan-500 transition-all duration-300 px-5 py-2 rounded-full shadow-lg shadow-blue-500/30 text-sm hover:scale-105"
+>
+  Cotizar
+</button>
         </div>
       </header>
 
@@ -251,6 +258,11 @@ style={{ fontFamily: 'Yaro' }}>
       </footer>
       {/* Botón flotante WhatsApp */}
 <div className="fixed bottom-6 right-6 z-50">
+
+<CotizarModal
+  abierto={mostrarCotizar}
+  cerrar={() => setMostrarCotizar(false)}
+/>
 
   {menuAbierto && (
   <div className="absolute bottom-0 right-20 w-72 rounded-2xl
