@@ -194,9 +194,7 @@ const [contacto, setContacto] = useState("59175174318");
           >
             <div className="text-4xl mb-2">👨‍💼</div>
             <h5 className="font-bold">Ing. Cristian Vargas</h5>
-            <p className="text-sm text-gray-400">
-              Gerente Comercial
-            </p>
+            
           </button>
 
           <button
@@ -210,9 +208,7 @@ const [contacto, setContacto] = useState("59175174318");
           >
             <div className="text-4xl mb-2">👨‍💻</div>
             <h5 className="font-bold">Ing. José Jerez</h5>
-            <p className="text-sm text-gray-400">
-              Redes y Telecomunicaciones
-            </p>
+            
           </button>
 
           <button
@@ -226,9 +222,7 @@ const [contacto, setContacto] = useState("59175174318");
           >
             <div className="text-4xl mb-2">👨‍🔧</div>
             <h5 className="font-bold">Ing. Julio C. Rojas</h5>
-            <p className="text-sm text-gray-400">
-              Soporte Técnico
-            </p>
+
           </button>
 
         </div>
